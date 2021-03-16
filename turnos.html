@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!--Slider-->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.slider').bxSlider();
+        });
+    </script>
+
+    <!--Slider-->
+    <!-- Picker-->
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+    <!-- Picker-->
+
+    <link href="https://unpkg.com/pattern.css" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <title>Veterinaria Malú</title>
+</head>
+
+<body>
+    <div class="emergency">
+        <div class="emergency-div">
+            EMERGENCIAS: 4700000 | contacto@veterinariamalu.com.ar
+        </div>
+    </div>
+    <div class="wrap">
+        <div class="header">
+            <div class="tittleAndLogo">
+                <h1 id="h1">Veterinaria Malú</h1>
+                <img src="./assets/img/logo.png" alt="Veterinaria Malú" width="50px" height="50px" id="logo">
+            </div>
+            <div class="searchArticle">
+                <div class="divSearchArticle">
+                    <input type="text" placeholder="¿Buscas algo?" id="searchInput" autocomplete="off">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+            <div class="navBar">
+                <nav id="nav">
+                    <ul class="ulNav">
+                        <li><a href="./index.html">Inicio</a></li>
+                        <li><a href="#">Artículos</a></li>
+                        <li><a href="./turnos.html">Turnos</a></li>
+                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="./contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="turnos-container">
+            <div class="turnos">
+                <form id="form">
+                    <h3>Reservas de turnos</h3>
+                    <h4>Complete sus datos</h4>
+                    <input type="text" name="" id="nombre" placeholder="Nombre">
+                    <input type="text" name="" id="tipo" placeholder="Tipo de Animal">
+                    <input type="email" name="" id="email" placeholder="Email">
+                    <input type="text" id="datepicker" placeholder="Fecha" autocomplete="off">
+                    <p>Le enviaremos un mail confirmando la hora</p>
+                    <div>
+                        <button id="enviar">Enviar</button>
+                        <button id="limpiar">Limpiar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="turnos-img">
+                <img src="./assets/img/erizo.jpg" alt="">
+            </div>
+        </div>
+
+    </div>
+    <div class="up-div">
+        <a href="#" class="up">Ir Arriba</a>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-maps">
+            <h4>¿Dónde estamos?</h4>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.5281221594464!2d-64.18715808431244!3d-31.427124703917215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a28e5b9d7fe5%3A0x284de6f3d7b8a60!2sMuseo%20Superior%20de%20Bellas%20Artes%20%22Evita%22%20%7C%20Palacio%20Ferreyra!5e0!3m2!1ses!2sar!4v1608436584147!5m2!1ses!2sar"
+                frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+        <div class="footer-links">
+            <h4>Enlaces de interés</h4>
+            <ul>
+                <li><a href="#">Salud Canina</a></li>
+                <li><a href="#">Alimentos Balanceados</a></li>
+                <li><a href="#">Diagnósticos preventivos</a></li>
+                <li><a href="#">Todo sobre dietas</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <span><i class="fab fa-facebook"></i><i class="fab fa-instagram-square"></i><i
+                    class="fab fa-youtube"></i></span>
+            <span>Teléfono - Celular: 4808080 / 3511425368</span>
+            <span>Veterinaria Malú SRL CUIT 30-19374658-2</span>
+        </div>
+        <div class="footer-copy">
+            Todos los derechos reservados Malú &copy; 2020
+        </div>
+    </footer>
+    <script>
+        $(function () {
+            $("#datepicker").datepicker({ dateFormat: 'dd-mm-yy' });
+            $('.up').click(function (e) {
+                e.preventDefault();
+
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 500);
+
+                return false
+            });
+        });
+    </script>
+    <script>
+
+        $('#enviar').click(function (e) {
+            e.preventDefault();
+            /*Captura de datos escrito en los inputs*/
+            var nom = document.getElementById("nombre").value;
+            var tipo = document.getElementById("tipo").value;
+            var email = document.getElementById("email").value;
+            var fecha = document.getElementById("datepicker").value;
+            /*Guardando los datos en el LocalStorage*/
+            localStorage.setItem("Nombre", nom);
+            localStorage.setItem("Tipo", tipo);
+            localStorage.setItem("Email", email);
+            localStorage.setItem("Fecha", fecha);
+            /*Limpiando los campos o inputs*/
+            document.getElementById("nombre").value = "";
+            document.getElementById("tipo").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("datepicker").value = "";
+            $(".turnos").html("<p>Pronto recibirás por mail los horarios disponibles , muchas gracias por confiar en nosotros " + nom + '</p><br>' + ' Tipo de animal: ' + tipo + ' - Email de contacto:  ' + email + ' para la fecha ' + fecha);
+        });
+
+        $(document).ready(function () {
+            var fechaLocal = localStorage.getItem("Fecha");
+            var fechaNombre = localStorage.getItem("Nombre");
+            var fechaTipo = localStorage.getItem("Tipo");
+            var fechaEmail = localStorage.getItem("Email");
+            if (localStorage.getItem("Nombre") && localStorage.getItem("Tipo") && localStorage.getItem("Email") && localStorage.getItem("Fecha")) {
+                $(".turnos").append("<p><br>" + "Turno Registrado: " + fechaLocal + " a nombre de: " + fechaNombre + " <br>Pronto nos comunicaremos contigo, muchas gracias por confiar en nosotros ");
+            };
+        });
+    </script>
+    <script>
+
+    </script>
+</body>
+
+</html>
